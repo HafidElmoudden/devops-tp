@@ -16,7 +16,10 @@ pipeline {
 
         stage('Test image') {
             steps {
-                bat 'docker run --rm hafidelmoudden/devops-tp:latest powershell -Command "Get-Content /usr/share/nginx/html/index.html"'
+                bat '''
+                echo Vérification du contenu de l’image...
+                docker run --rm hafidelmoudden/devops-tp:latest cat /usr/share/nginx/html/index.html
+                '''
             }
         }
 
