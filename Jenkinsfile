@@ -17,7 +17,7 @@ pipeline {
 
         stage('Test image') {
             steps {
-                bat 'docker run --rm hafidelmoudden/devops-tp:latest cmd /c "type C:\\usr\\share\\nginx\\html\\index.html"'
+                bat 'docker run --rm hafidelmoudden/devops-tp:latest cat /usr/share/nginx/html/index.html'
             }
         }
 
